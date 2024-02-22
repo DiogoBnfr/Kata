@@ -3,7 +3,7 @@ const n2 = document.getElementById("n2");
 const n3 = document.getElementById("n3");
 const n4 = document.getElementById("n4");
 
-setInterval(function attTimer () {
+setInterval(function attTimer() {
 	let d = new Date();
 	let m = d.getMinutes().toString().split("");
 	let s = d.getSeconds().toString().split("");
@@ -29,5 +29,3 @@ setInterval(function attTimer () {
 			break;
 	}
 }, 1000);
-
-attTimer();
