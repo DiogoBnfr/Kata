@@ -1,27 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title></title>
-		<link href="style.css" rel="stylesheet">
-	</head>
-	<body>
-		<div id="timer-display">
-			<div class="number-case">
-				<p id="n1"></p>
-			</div>
-			<div id="number-case-midleft" class="number-case">
-				<p id="n2"></p>
-			</div>
-			<span style="font-size: 100px;">:</span>
-			<div id="number-case-midright" class="number-case">
-				<p id="n3"></p>
-			</div>
-			<div class="number-case">
-				<p id="n4"></p>
-			</div>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script src="https://kit.fontawesome.com/3053e538e8.js" crossorigin="anonymous"></script>
+	<link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+	<div id="overlay" onclick="toggleMenu()"></div>
+
+	<header>
+		<div id="config-box-bg">
+			<i class="fa-sharp fa-solid fa-gear fa-3x" onclick="toggleMenu()"></i>
 		</div>
-	</body>
+	</header>
+
+	<div id="floating-config-menu">
+		<span>Hello</span>
+	</div>
+
+	<h1 id="title">POMODORO TIMER</h1>
+	<div id="timer-box">
+		<header>
+			<h1 id="stage">STAGE</h1>
+		</header>
+
+
+		<div id="timer-bg">
+			<p id="timer">00:00:00</p>
+		</div>
+
+		<footer>
+			<button class="btn" type="button" onclick="startTimer()">START</button>
+			<button class="btn" type="button" onclick="stopTimer()">RESET</button>
+		</footer>
+	</div>
 	<script src="script.js"></script>
+</body>
+
 </html>
