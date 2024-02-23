@@ -1,13 +1,19 @@
 const timer = document.getElementById("timer");
+const stage = document.getElementById("stage");
+const startButton = document.getElementById("startButton");
 
-let interval;
+const PAUSE = "PAUSE";
+const FOCUS = "FOCUS";
+const BREAK = "BREAK";
 
-const defaultMinutes = 10;
-let defaultSeconds = defaultMinutes * 60;
+let interval = undefined;
+
+const defaultFocusMinutes = 60;
+let defaultSeconds = defaultFocusMinutes * 60;
 
 function convertTime() {
-	let hours = Math.floor(defaultSeconds / 60 / 60);
-	let minutes = Math.floor(defaultSeconds / 60);
+	let hours = Math.floor(defaultSeconds / 3600);
+	let minutes = Math.floor((defaultSeconds % 3600) / 60);
 	let seconds = defaultSeconds % 60;
 
 	seconds = seconds < 10 ? '0' + seconds : seconds;
@@ -18,23 +24,30 @@ function convertTime() {
 }
 
 function startTimer() {
-	updateCountdown();
-	interval = setInterval(updateCountdown, 1000);
+	if (interval == undefined) {
+		updateCountdown();
+		interval = setInterval(updateCountdown, 1000);
+		startButton.innerText = "STOP";
+		stage.innerText = FOCUS;
+	} else {
+		clearInterval(interval);
+		interval = undefined;
+		startButton.innerText = "START";
+		stage.innerText = PAUSE;
+	}
 }
 
 function updateCountdown() {
-	timer.innerHTML = convertTime();
 	defaultSeconds--;
+	timer.innerHTML = convertTime();
 }
 
 function resetTimer() {
 	clearInterval(interval);
-	defaultSeconds = defaultMinutes * 60;
+	interval = undefined;
+	startButton.innerText = "START";
+	defaultSeconds = defaultFocusMinutes * 60;
 	timer.innerText = convertTime();
-}
-
-function stopTimer() {
-	clearInterval(interval);
 }
 
 function toggleMenu() {
