@@ -1,29 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500;900&display=swap');
 
 :root {
-	--light-main-bg: #d9d9d9;
 	--light-main-fg: #494949;
-	--light-button-bg: #1e1e1e;
-	--light-button-fg: #e8e8e8;
-
-	--dark-button-bg: #e8e8e8;
-	--dark-button-fg: #1e1e1e;
-	--dark-button-border: #1e1e1e;
-
-	--timer-box-bg: #a14848;
-	--timer-box-fg: #e8e8e8;
-	--timer-numbers-bg: #8e3d3d;
-	--timer-numbers-fg: #e8e8e8;
-
-	--config-box-bg: #1e1e1e;
-	--config-box-fg: #e8e8e8;
+	--dark-gray: #1e1e1e;
+	--light-gray: #e8e8e8;
+	--light-red: #a14848;
+	--dark-red: #8e3d3d;
 }
 
 body {
 	width: 100vw;
 	height: 100vh;
 	margin: 0;
-	background-color: var(--light-main-bg);
+	background-color: #d9d9d9;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -50,7 +39,7 @@ body>header {
 #config-box-bg {
 	width: 70px;
 	height: 70px;
-	background-color: var(--config-box-bg);
+	background-color: var(--dark-gray);
 	position: absolute;
 	right: 0px;
 	border-bottom-left-radius: 10px;
@@ -83,13 +72,17 @@ body>header {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	background-color: #ffffff;
+	background-color: var(--light-gray);
+	color: var(--dark-gray);
 	padding: 20px;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 	display: none;
 	width: 700px;
 	height: 500px;
 	border-radius: 10px;
+	font-family: "Roboto", sans-serif;
+	font-weight: 500;
+	font-size: 20px;
 	z-index: 100;
 }
 
@@ -97,9 +90,41 @@ body>header {
 	display: block;
 }
 
+.input-wrapper {
+	margin-bottom: 10px;
+}
+
+.input-wrapper>label {
+	margin-right: 5px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+	appearance: none;
+	-moz-appearance: textfield;
+}
+
+.input-wrapper>input {
+	font-size: 16px;
+	font-family: inherit;
+	padding: 2px 6px;
+	width: 80px;
+	height: 25px;
+	border: 2px #fff;
+	border-radius: 10px;
+	outline: none;
+}
+
 #title {
 	margin: 0px;
-	color: var(--light-main-fg);
+	color: #494949;
 	font-size: 80px;
 	font-family: "Roboto", sans-serif;
 	text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
@@ -108,7 +133,7 @@ body>header {
 #timer-box {
 	width: 900px;
 	height: 500px;
-	background-color: var(--timer-box-bg);
+	background-color: var(--light-red);
 	border-radius: 10px;
 	margin-bottom: 200px;
 }
@@ -121,7 +146,7 @@ body>header {
 
 #stage {
 	margin: 20px;
-	color: var(--timer-box-fg);
+	color: var(--light-gray);
 	font-size: 60px;
 	font-family: "Roboto", sans-serif;
 	text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
@@ -130,7 +155,7 @@ body>header {
 #timer-bg {
 	width: 800px;
 	height: 260px;
-	background-color: var(--timer-numbers-bg);
+	background-color: var(--dark-red);
 	border-radius: 10px;
 	margin: 0px 50px;
 	display: flex;
@@ -138,13 +163,13 @@ body>header {
 }
 
 #timer {
-	color: var(--timer-numbers-fg);
+	color: var(--light-gray);
 	margin: 0px;
 	font-size: 190px;
 	text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
 }
 
-#timer-box>footer {
+#timer-box footer {
 	width: 100%;
 	height: fit-content;
 	display: flex;
@@ -156,8 +181,8 @@ body>header {
 .btn {
 	width: 240px;
 	height: 100px;
-	background-color: var(--light-button-bg);
-	color: var(--light-button-fg);
+	background-color: var(--dark-gray);
+	color: var(--light-gray);
 	border-radius: 10px;
 	border-style: none;
 	margin: 0px 10px;
@@ -168,8 +193,16 @@ body>header {
 }
 
 .btn:hover {
-	background-color: var(--dark-button-bg);
-	color: var(--dark-button-fg);
-	border-color: var(--dark-button-border);
+	background-color: var(--light-gray);
+	color: var(--dark-gray);
+	border-color: var(--dark-gray);
 	transition: 0.5s;
+}
+
+.btn-small {
+	width: 100px;
+	height: 50px;
+	font-size: 30px;
+	margin: 0px;
+	margin-top: 305px;
 }
