@@ -22,3 +22,7 @@ let codes = {
 for (let code in codes) {
 	console.log(code);
 }
+
+// constructors
+
+
