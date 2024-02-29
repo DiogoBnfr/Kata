@@ -20,10 +20,10 @@ void sort_array(int arr[], int n) {
 void print_array(int arr[], int n) {
   for (int i = 0; i < n; i++) {
     if (i == n - 1) {
-      printf("%ld", arr[i]);
+      printf("%i", arr[i]);
       break;
     }
-    printf("%ld -> ", arr[i]);
+    printf("%i -> ", arr[i]);
   }
 }
 
