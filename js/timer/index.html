@@ -9,10 +9,27 @@
 	<link href="style.css" rel="stylesheet">
 	<!-- Icons -->
 	<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+	<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
 </head>
 
 <body>
-	<div id="overlay" onclick="toggleMenu()"></div>
+	<div id="overlay" onclick="toggleAllOff()"></div>
+
+	<header>
+		<button type="button" class="btn-medium" id="infoButton" onclick="toggleInfo()">
+			<i class="fi fi-sr-info"></i>
+		</button>
+	</header>
+
+	<div id="floating-info">
+		<p>Keyboard Shortcuts</p>
+		<p id="keybindings">
+			<strong>Space</strong> - Start/Stop timer<br>
+			<strong>R</strong> - Reset timer<br>
+			<strong>S</strong> - Change stage<br>
+			<strong>C</strong> - Open settings<br>
+		</p>
+	</div>
 
 	<div id="floating-config-menu">
 		<p>Time (Minutes)</p>
@@ -40,12 +57,12 @@
 		</div>
 
 		<footer>
-			<button id="configButton" type="button" onclick="toggleMenu();">
+			<button class="btn-medium" id="configButton" type="button" onclick="toggleMenu();">
 				<i class="fa-sharp fa-solid fa-gear fa-3x"></i>
 			</button>
 			<button class="btn" id="startButton" type="button" onclick="startTimer();buttonClickPlay();">START</button>
 			<button class="btn" id="resetButton" type="button" onclick="buttonClickPlay();resetTimer();">RESET</button>
-			<button id="changeButton" type="button" onclick="buttonClickPlay();changeStage();">
+			<button class="btn-medium" id="changeButton" type="button" onclick="buttonClickPlay();changeStage();">
 				<i class="fi fi-sr-angle-circle-right"></i>
 			</button>
 		</footer>

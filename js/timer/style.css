@@ -1,6 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;900&display=swap');
 
 :root {
+	--background: #d9d9d9;
 	--light-main-fg: #494949;
 	--dark-gray: #1e1e1e;
 	--light-gray: #e8e8e8;
@@ -12,7 +13,7 @@ body {
 	width: 100vw;
 	height: 100vh;
 	margin: 0;
-	background-color: #d9d9d9;
+	background-color: var(--background);
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -183,15 +184,7 @@ input[type=number] {
 	transition: 0.5s;
 }
 
-.btn-small {
-	width: 100px;
-	height: 50px;
-	font-size: 30px;
-	margin: 0px;
-	margin-top: 305px;
-}
-
-#changeButton {
+.btn-medium {
 	width: 100px;
 	height: 100px;
 	background-color: var(--light-red);
@@ -201,12 +194,52 @@ input[type=number] {
 	color: var(--light-gray);
 }
 
-#configButton {
+.btn-small {
 	width: 100px;
-	height: 100px;
-	background-color: var(--light-red);
-	border: 0px;
+	height: 50px;
+	font-size: 30px;
+	margin: 0px;
+	margin-top: 305px;
+}
+
+#changeButton {
+	font-size: 45px;
+}
+
+#configButton {
 	font-size: 15px;
-	cursor: pointer;
-	color: var(--light-gray);
+}
+
+#infoButton {
+	background-color: var(--background);
+	color: var(--light-red);
+}
+
+#floating-info {
+	display: none;
+	background-color: var(--light-gray);
+	color: var(--dark-gray);
+	width: 400px;
+	height: 90%;
+	border-radius: 10px;
+	position: fixed;
+	top: 50%;
+	left: 250px;
+	transform: translate(-50%, -50%);
+	padding: 20px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+	font-family: "Roboto", sans-serif;
+	font-weight: 500;
+	font-size: 20px;
+	z-index: 100;
+}
+
+#floating-info.active {
+	display: block;
+}
+
+#keybindings {
+	font-weight: 300;
+	line-height: 1.8;
 }

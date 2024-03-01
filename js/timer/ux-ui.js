@@ -5,11 +5,28 @@ function buttonClickPlay() {
 	buttonClickAudio.currentTime = 0;
 }
 
+const overlay = document.getElementById("overlay");
+const menu = document.getElementById("floating-config-menu");
+const info = document.getElementById("floating-info");
+
+function toggleAllOff() {
+	overlay.classList.toggle("active");
+	if (menu.classList.contains("active")) menu.classList.toggle("active");
+	if (info.classList.contains("active")) info.classList.toggle("active");
+}
+
+function toggleOverlay() {
+	overlay.classList.toggle("active");
+}
+
 function toggleMenu() {
 	buttonClickPlay();
-
-	const menu = document.getElementById("floating-config-menu");
-	const overlay = document.getElementById("overlay");
 	menu.classList.toggle("active");
-	overlay.classList.toggle("active");
+	toggleOverlay();
+}
+
+function toggleInfo() {
+	buttonClickPlay();
+	info.classList.toggle("active");
+	toggleOverlay();
 }
