@@ -6,6 +6,7 @@ function buttonClickPlay() {
 }
 
 function toggleMenu() {
+	buttonClickPlay();
 	const menu = document.getElementById("floating-config-menu");
 	const overlay = document.getElementById("overlay");
 	menu.classList.toggle("active");
