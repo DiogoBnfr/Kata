@@ -18,15 +18,15 @@
 		<p>Time (Minutes)</p>
 		<div class="input-wrapper">
 			<label for="focusMinutes">Focus</label>
-			<input type="number" id="focusMinutes" name="focusMinutes" min="1">
+			<input type="number" id="focusMinutes" name="focusMinutes">
 		</div>
 
 		<div class="input-wrapper">
 			<label for="breakMinutes">Break</label>
-			<input type="number" id="breakMinutes" name="breakMinutes" min="1">
+			<input type="number" id="breakMinutes" name="breakMinutes">
 		</div>
 
-		<button class="btn btn-small" type="button" onclick="toggleMenu();changeSettings();">Save</button>
+		<button id="saveButton" class="btn btn-small" type="button" onclick="toggleMenu();changeSettings();">Save</button>
 	</div>
 
 	<h1 id="title">POMODORO TIMER</h1>
@@ -44,7 +44,7 @@
 				<i class="fa-sharp fa-solid fa-gear fa-3x"></i>
 			</button>
 			<button class="btn" id="startButton" type="button" onclick="startTimer();buttonClickPlay();">START</button>
-			<button class="btn" type="button" onclick="buttonClickPlay();resetTimer();">RESET</button>
+			<button class="btn" id="resetButton" type="button" onclick="buttonClickPlay();resetTimer();">RESET</button>
 			<button id="changeButton" type="button" onclick="buttonClickPlay();changeStage();">
 				<i class="fi fi-sr-angle-circle-right"></i>
 			</button>
@@ -52,6 +52,7 @@
 	</div>
 	<script src="timer.js"></script>
 	<script src="ux-ui.js"></script>
+	<script src="keyboard.js"></script>
 </body>
 
 </html>
