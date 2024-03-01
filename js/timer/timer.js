@@ -2,14 +2,13 @@ const timerElement = document.getElementById("timer");
 const stageElement = document.getElementById("stage");
 const startButtonElement = document.getElementById("startButton");
 
-const PAUSE = "PAUSE";
 const FOCUS = "FOCUS";
 const BREAK = "BREAK";
 let stage = FOCUS;
 
 let focusDurationInMinutes = 0.1;
 let breakDurationInMinutes = 0.1;
-let currentStageInSeconds;
+var currentStageInSeconds;
 
 let timerState = undefined; // != undefined == active
 
@@ -17,6 +16,7 @@ function setTimer() {
 	if (stage == FOCUS) currentStageInSeconds = focusDurationInMinutes * 60;
 	if (stage == BREAK) currentStageInSeconds = breakDurationInMinutes * 60;
 	timerElement.innerText = formatTimeToDisplay();
+	resetTimer();
 }
 
 function startTimer() {
@@ -28,7 +28,6 @@ function startTimer() {
 }
 
 function stopTimer() {
-	stageElement.innerText = PAUSE;
 	startButtonElement.innerText = "START";
 	clearInterval(timerState);
 	timerState = undefined;
@@ -46,12 +45,20 @@ function updateCountdown() {
 	timerElement.innerText = formatTimeToDisplay();
 }
 
+var endSessionAudio = new Audio('end_session_bell.mp3');
+
+function endSessionPlay() {
+	endSessionAudio.play();
+}
+
 function formatTimeToDisplay() {
 	let hours = Math.floor(currentStageInSeconds / 3600);
 	let minutes = Math.floor((currentStageInSeconds % 3600) / 60);
 	let seconds = Math.floor(currentStageInSeconds % 60);
 
 	if (hours == 0 && minutes == 0 && seconds == 0)
+		endSessionPlay();
+	if (hours - 1 < -1 && minutes - 1 < -1 && seconds - 1 < -1)
 		changeStage();
 
 	seconds = seconds < 10 ? '0' + seconds : seconds;
@@ -71,8 +78,8 @@ function changeStage() {
 		stageElement.innerText = FOCUS;
 		stage = FOCUS;
 	}
+	startButtonElement.innerText = "START";
 	setTimer();
-	startTimer();
 }
 
 function changeSettings() {

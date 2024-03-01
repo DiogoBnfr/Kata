@@ -1,3 +1,10 @@
+var buttonClickAudio = new Audio('button_click.mp3');
+
+function buttonClickPlay() {
+	buttonClickAudio.play();
+	buttonClickAudio.currentTime = 0;
+}
+
 function toggleMenu() {
 	const menu = document.getElementById("floating-config-menu");
 	const overlay = document.getElementById("overlay");

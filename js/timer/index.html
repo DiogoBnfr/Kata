@@ -7,16 +7,12 @@
 	<title>Pomodoro Timer</title>
 	<script src="https://kit.fontawesome.com/3053e538e8.js" crossorigin="anonymous"></script>
 	<link href="style.css" rel="stylesheet">
+	<!-- Icons -->
+	<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
 </head>
 
 <body>
 	<div id="overlay" onclick="toggleMenu()"></div>
-
-	<header>
-		<div id="config-box-bg">
-			<i class="fa-sharp fa-solid fa-gear fa-3x" onclick="toggleMenu()"></i>
-		</div>
-	</header>
 
 	<div id="floating-config-menu">
 		<p>Time (Minutes)</p>
@@ -30,7 +26,7 @@
 			<input type="number" id="breakMinutes" name="breakMinutes" min="1">
 		</div>
 
-		<button class="btn btn-small" type="button" onclick="changeSettings()">Save</button>
+		<button class="btn btn-small" type="button" onclick="toggleMenu();changeSettings();">Save</button>
 	</div>
 
 	<h1 id="title">POMODORO TIMER</h1>
@@ -44,12 +40,18 @@
 		</div>
 
 		<footer>
-			<button class="btn" id="startButton" type="button" onclick="startTimer()">START</button>
-			<button class="btn" type="button" onclick="resetTimer()">RESET</button>
+			<button id="configButton" type="button" onclick="buttonClickPlay();toggleMenu();">
+				<i class="fa-sharp fa-solid fa-gear fa-3x"></i>
+			</button>
+			<button class="btn" id="startButton" type="button" onclick="startTimer();buttonClickPlay();">START</button>
+			<button class="btn" type="button" onclick="buttonClickPlay();resetTimer();">RESET</button>
+			<button id="changeButton" type="button" onclick="buttonClickPlay();changeStage();">
+				<i class="fi fi-sr-angle-circle-right"></i>
+			</button>
 		</footer>
 	</div>
 	<script src="timer.js"></script>
-	<script src="ui.js"></script>
+	<script src="ux-ui.js"></script>
 </body>
 
 </html>

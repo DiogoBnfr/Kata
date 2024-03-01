@@ -36,22 +36,6 @@ body>header {
 	top: 0px;
 }
 
-#config-box-bg {
-	width: 70px;
-	height: 70px;
-	background-color: var(--dark-gray);
-	position: absolute;
-	right: 0px;
-	border-bottom-left-radius: 10px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-#config-box-bg>i {
-	cursor: pointer;
-}
-
 #overlay {
 	position: fixed;
 	top: 0;
@@ -205,4 +189,24 @@ input[type=number] {
 	font-size: 30px;
 	margin: 0px;
 	margin-top: 305px;
+}
+
+#changeButton {
+	width: 100px;
+	height: 100px;
+	background-color: var(--light-red);
+	border: 0px;
+	font-size: 40px;
+	cursor: pointer;
+	color: var(--light-gray);
+}
+
+#configButton {
+	width: 100px;
+	height: 100px;
+	background-color: var(--light-red);
+	border: 0px;
+	font-size: 15px;
+	cursor: pointer;
+	color: var(--light-gray);
 }
