@@ -1,4 +1,5 @@
 #include <math.h>
+#include <stdalign.h>
 #include <stdbool.h>
 
 int size_num(int num) {
@@ -19,6 +20,7 @@ bool narcissistic(int num) {
 
   while (size > 0) {
     digit = num % 10;
+
     sum += pow(digit, power);
     num /= 10;
     size--;
