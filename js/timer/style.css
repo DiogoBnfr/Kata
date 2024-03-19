@@ -7,6 +7,13 @@
 	--light-gray: #e8e8e8;
 	--light-red: #a14848;
 	--dark-red: #8e3d3d;
+	/* Mint theme */
+	/*--background: #305252;*/
+	/*--light-main-fg: #b7d5d4;*/
+	/*--dark-gray: #1e1e1e;*/
+	/*--light-gray: #e8e8e8;*/
+	/*--light-red: #77878b;*/
+	/*--dark-red: #373e40;*/
 }
 
 body {
@@ -79,7 +86,7 @@ body>header {
 	margin-bottom: 10px;
 }
 
-.input-wrapper>label {
+.input-wrapper label {
 	margin-right: 5px;
 }
 
@@ -96,7 +103,7 @@ input[type=number] {
 	-moz-appearance: textfield;
 }
 
-.input-wrapper>input {
+.input-wrapper input {
 	font-size: 16px;
 	font-family: inherit;
 	padding: 2px 6px;
@@ -109,7 +116,7 @@ input[type=number] {
 
 #title {
 	margin: 0px;
-	color: #494949;
+	color: var(--light-gray);
 	font-size: 80px;
 	font-family: "Roboto", sans-serif;
 	text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);

@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 int digital_root(int n) {
   int sum = 0;
   while (n > 0) {

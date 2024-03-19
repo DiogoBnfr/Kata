@@ -1,7 +1,6 @@
 #include <stdio.h>
 
 int main() {
-  int b = getchar() != EOF;
-  printf("%d", b);
+  printf("EOF: %d\n", EOF);
   return 0;
 }

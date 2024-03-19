@@ -32,18 +32,46 @@
 	</div>
 
 	<div id="floating-config-menu">
-		<p>Time (Minutes)</p>
-		<div class="input-wrapper">
-			<label for="focusMinutes">Focus</label>
-			<input type="number" id="focusMinutes" name="focusMinutes">
-		</div>
+		<form>
+			<fieldset>
+				<legend>Settings</legend>
 
-		<div class="input-wrapper">
-			<label for="breakMinutes">Break</label>
-			<input type="number" id="breakMinutes" name="breakMinutes">
-		</div>
+				<p>Time (Minutes)</p>
+				<div class="input-wrapper">
+					<label for="focusMinutes">Focus</label>
+					<input type="number" id="focusMinutes" name="focusMinutes">
+				</div>
+				<div class="input-wrapper">
+					<label for="breakMinutes">Break</label>
+					<input type="number" id="breakMinutes" name="breakMinutes">
+				</div>
 
-		<button id="saveButton" class="btn btn-small" type="button" onclick="toggleMenu();changeSettings();">Save</button>
+				<p>Colorschemes</p>
+				<div class="input-wrapper">
+					<label for="theme">Light</label>
+					<input type="radio" name="theme" id="light" checked>
+				</div>
+				<div class="input-wrapper">
+					<label for="theme">Dark</label>
+					<input type="radio" name="theme" id="dark">
+				</div>
+				<div class="input-wrapper">
+					<label for="theme">Rose</label>
+					<input type="radio" name="theme" id="rose">
+				</div>
+				<div class="input-wrapper">
+					<label for="theme">Pamela</label>
+					<input type="radio" name="theme" id="pamela">
+				</div>
+				<div class="input-wrapper">
+					<label for="theme">Mint</label>
+					<input type="radio" name="theme" id="mint" checked>
+				</div>
+
+				<button id="saveButton" class="btn btn-small" type="button"
+					onclick="toggleMenu();changeSettings();">Save</button>
+			</fieldset>
+		</form>
 	</div>
 
 	<h1 id="title">POMODORO TIMER</h1>

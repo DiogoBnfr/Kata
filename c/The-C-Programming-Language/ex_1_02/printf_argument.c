@@ -1,6 +1,6 @@
 #include <stdio.h>
 
 int main() {
-  putchar(EOF);
+  printf("hello: \x");
   return 0;
 }
